@@ -95,12 +95,18 @@
     },
     {
       "day": 6,
-      "title": "Writing with Claude",
-      "idea": "",
-      "howToClaude": "",
-      "stepByStep": [],
-      "deploy": "",
-      "reflection": "",
+      "title": "One Action",
+      "idea": "A page that does nothing is a poster. A page that does one thing is a tool. The skill today is restraint again: choosing the single action you want a visitor to take and refusing all the others.\n\nThe tool is Claude Code, wiring one call to action that actually works end to end. Email capture, calendar link, contact form, a button that does something real. One. Not three.",
+      "howToClaude": "Add a [email capture form using Buttondown, calendar booking link, contact form] to my landing page. When someone uses it, they should [describe what happens]. Keep everything else the same.",
+      "stepByStep": [
+        "Decide the one action before opening Claude Code. Write it down in plain words.",
+        "Set up the service that powers the action. Buttondown for email. Cal.com (cal.com) for calendar. Use the free tier.",
+        "Copy the embed code or URL from the service.",
+        "Open Claude Code with yesterday's project. Paste the prompt above plus any code from the service.",
+        "Test the CTA yourself. Submit a real entry. Confirm it lands where it should."
+      ],
+      "deploy": "Save the file. Use the CTA one more time as a stranger would.",
+      "reflection": "Did you almost add a second CTA? Why? Notice that pull. It is the pull that kills clarity.",
       "status": "pending",
       "date": "2026-05-18"
     },
