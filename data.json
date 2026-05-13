@@ -27,12 +27,18 @@
     },
     {
       "day": 2,
-      "title": "Context Setting",
-      "idea": "",
-      "howToClaude": "",
-      "stepByStep": [],
-      "deploy": "",
-      "reflection": "",
+      "title": "Solution Shape",
+      "idea": "Every solution has a shape. Information, workflow, data persistence, or autonomous actions. The skill today is recognizing which shape your problem actually wants, not which one excites you.\n\nMost people pick the wrong shape because they pick the most interesting one. Claude is the tool that helps you stress-test the choice.\n\nBy end of day you will know what you are building, what form it takes, and which Claude surface you will use to build it.",
+      "howToClaude": "Here is my problem and outcome from yesterday: [paste]. Walk me through the four shapes: information, workflow, data persistence, autonomous actions. For each, tell me the test from the Build Brief and ask me to answer honestly. At the end, recommend the shape and explain your reasoning.",
+      "stepByStep": [
+        "Open Claude.ai (claude.ai). Paste sections 1 and 2 of your Build Brief plus the prompt above.",
+        "Answer Claude's questions honestly. Especially the test questions for each shape.",
+        "Pick your shape. If two feel right, pick the simpler one.",
+        "Write section 4: \"My solution is a [shape] that [does what] for [who].\"",
+        "Write section 5: where you will build. Claude.ai, Project, Cowork, or Claude Code. Start at Claude.ai. Move only if you need to."
+      ],
+      "deploy": "Post your one-line form sentence in the cohort. \"My solution is a [shape] that [does what] for [who].\"",
+      "reflection": "Did you almost pick a more exciting shape that did not match your problem? What pulled you there?",
       "status": "pending",
       "date": "2026-05-14"
     },
