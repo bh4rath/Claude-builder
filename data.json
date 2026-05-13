@@ -163,12 +163,18 @@
     },
     {
       "day": 10,
-      "title": "Automating Tasks",
-      "idea": "",
-      "howToClaude": "",
-      "stepByStep": [],
-      "deploy": "",
-      "reflection": "",
+      "title": "The Project",
+      "idea": "Today the design becomes a Claude Project. The skill is turning a written design into a working instrument. The tool is the Claude.ai Project feature, with custom instructions that encode the shape and reference files that ground the thinking.\n\nOnce built, the Project does the same job the same way every time, available to you whenever you need it.",
+      "howToClaude": "Write custom instructions for a Claude Project that does this: [paste your design]. The instructions should make any new chat in this Project follow the shape automatically. Use clear language. No marketing. Specify what Claude should ask, in what order, and what shape the output should take. Keep it under 300 words.",
+      "stepByStep": [
+        "Open Claude.ai (claude.ai). Create a new Project. Name it after the recurring problem.",
+        "Paste the prompt above with your design. Let Claude write the custom instructions.",
+        "Paste the instructions into the Project's custom instructions field.",
+        "Add any reference files the Project needs (past examples, brand notes, templates).",
+        "Open a new chat inside the Project. Test the shape with a real input. Iterate the instructions until the output feels right."
+      ],
+      "deploy": "The Project itself is the deliverable. Take a screenshot of the Project page.",
+      "reflection": "What did the Project produce that you would have produced more slowly on your own?",
       "status": "pending",
       "date": "2026-05-22"
     },
