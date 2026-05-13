@@ -78,12 +78,18 @@
     },
     {
       "day": 5,
-      "title": "Research Mode",
-      "idea": "",
-      "howToClaude": "",
-      "stepByStep": [],
-      "deploy": "",
-      "reflection": "",
+      "title": "The Landing Page",
+      "idea": "Today the copy meets the page. The skill is translating words into a layout that respects them. The tool is Claude Code, where you describe the page in plain English and watch structure appear.\n\nThe trick is to lead with feeling, not with features. Tell Claude what the page should feel like before you tell it what should be on it.",
+      "howToClaude": "Build me a single-page landing page. Here is the copy: [paste]. I want it to feel [warm, bold, quiet, playful, premium, friendly]. Single HTML file with inline CSS. Mobile first. Clean typography. One section per content block. Keep it simple.",
+      "stepByStep": [
+        "Open Claude Code in a fresh folder for your project.",
+        "Paste your copy plus the prompt above with your feeling words.",
+        "Let Claude Code build the file. Open it in your browser.",
+        "Walk away for ten minutes. Come back fresh. List three things that work and three that are off.",
+        "Tell Claude exactly what is off and how you want it instead. Iterate two or three rounds."
+      ],
+      "deploy": "Save v1 of the page. Take a screenshot. Compare against the feeling words you started with.",
+      "reflection": "What did you ask for that you could not have specified to a designer six months ago?",
       "status": "pending",
       "date": "2026-05-17"
     },
