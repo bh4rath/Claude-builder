@@ -146,12 +146,18 @@
     },
     {
       "day": 9,
-      "title": "Working with Data",
-      "idea": "",
-      "howToClaude": "",
-      "stepByStep": [],
-      "deploy": "",
-      "reflection": "",
+      "title": "The Shape",
+      "idea": "A thinking instrument has a shape. What inputs go in, what questions get asked, what outputs come out. The skill today is designing that shape.\n\nThe tool is Claude.ai used not as a chatbot but as a partner sketching the architecture of repeatable thinking. By end of day you have a one-page design that another person could read and understand.",
+      "howToClaude": "Here is the recurring thinking task: [paste yesterday's paragraph]. Help me design the shape. List the inputs that always go in. List the questions that always get asked. List the outputs that always come out. Then suggest the order of the questions. Push back if my list is too long or vague.",
+      "stepByStep": [
+        "Open Claude.ai (claude.ai). Paste yesterday's paragraph plus the prompt above.",
+        "Build the list iteratively. Inputs, questions, outputs.",
+        "Test the shape mentally against three real past situations. Does it work for all three?",
+        "Tighten. Cut questions that did not earn their place.",
+        "Save the design as one page."
+      ],
+      "deploy": "Add the one-page design to your project Notion.",
+      "reflection": "Which question almost did not make the list but turned out to matter most?",
       "status": "pending",
       "date": "2026-05-21"
     },
