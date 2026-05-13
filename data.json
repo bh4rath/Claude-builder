@@ -1,0 +1,249 @@
+{
+  "meta": {
+    "title": "Claude Builder — 21 Days of AI Building",
+    "user": "Bharath S",
+    "cohort": "Cohort 1",
+    "totalDays": 21,
+    "completedDays": 0,
+    "streak": 0
+  },
+  "days": [
+    {
+      "day": 1,
+      "title": "Problem Framing",
+      "idea": "Most people come to Claude with a fuzzy ask and blame the answer. The skill this week is problem framing.\n\nBefore you can solve anything, you need to understand what you are actually trying to solve. Most people skip this step. They jump straight to solutions, prompts, and outputs — and then wonder why the answers feel off.\n\nProblem framing is the act of getting clear before you get busy. It is the difference between spinning in circles and moving with purpose.",
+      "howToClaude": "I am going to describe a problem in plain language. Help me sharpen it into a clear, specific problem statement. Ask me clarifying questions if needed. Do not solve it yet — just help me see it more clearly.\n\nHere is my problem: [describe your problem or situation in your own words]",
+      "stepByStep": [
+        "Open Claude.ai and start a new conversation",
+        "Describe your current situation or challenge in plain, unfiltered language — do not try to make it sound smart or polished",
+        "Paste the How to Claude prompt above and let Claude ask you questions",
+        "Answer Claude’s questions honestly — notice what gets sharper as you respond",
+        "Ask Claude to write your problem statement in exactly two crisp sentences. Save this."
+      ],
+      "deploy": "Two things in the cohort space: a screenshot of the hello-you file, and your problem statement in two lines.",
+      "reflection": "What got clearer in your problem statement that you had been hiding from yourself?",
+      "status": "pending",
+      "date": "2026-05-13"
+    },
+    {
+      "day": 2,
+      "title": "Context Setting",
+      "idea": "",
+      "howToClaude": "",
+      "stepByStep": [],
+      "deploy": "",
+      "reflection": "",
+      "status": "pending",
+      "date": "2026-05-14"
+    },
+    {
+      "day": 3,
+      "title": "Iterating on Output",
+      "idea": "",
+      "howToClaude": "",
+      "stepByStep": [],
+      "deploy": "",
+      "reflection": "",
+      "status": "pending",
+      "date": "2026-05-15"
+    },
+    {
+      "day": 4,
+      "title": "Structuring Your Ask",
+      "idea": "",
+      "howToClaude": "",
+      "stepByStep": [],
+      "deploy": "",
+      "reflection": "",
+      "status": "pending",
+      "date": "2026-05-16"
+    },
+    {
+      "day": 5,
+      "title": "Research Mode",
+      "idea": "",
+      "howToClaude": "",
+      "stepByStep": [],
+      "deploy": "",
+      "reflection": "",
+      "status": "pending",
+      "date": "2026-05-17"
+    },
+    {
+      "day": 6,
+      "title": "Writing with Claude",
+      "idea": "",
+      "howToClaude": "",
+      "stepByStep": [],
+      "deploy": "",
+      "reflection": "",
+      "status": "pending",
+      "date": "2026-05-18"
+    },
+    {
+      "day": 7,
+      "title": "Week 1 Synthesis",
+      "idea": "",
+      "howToClaude": "",
+      "stepByStep": [],
+      "deploy": "",
+      "reflection": "",
+      "status": "pending",
+      "date": "2026-05-19"
+    },
+    {
+      "day": 8,
+      "title": "Building a Simple Tool",
+      "idea": "",
+      "howToClaude": "",
+      "stepByStep": [],
+      "deploy": "",
+      "reflection": "",
+      "status": "pending",
+      "date": "2026-05-20"
+    },
+    {
+      "day": 9,
+      "title": "Working with Data",
+      "idea": "",
+      "howToClaude": "",
+      "stepByStep": [],
+      "deploy": "",
+      "reflection": "",
+      "status": "pending",
+      "date": "2026-05-21"
+    },
+    {
+      "day": 10,
+      "title": "Automating Tasks",
+      "idea": "",
+      "howToClaude": "",
+      "stepByStep": [],
+      "deploy": "",
+      "reflection": "",
+      "status": "pending",
+      "date": "2026-05-22"
+    },
+    {
+      "day": 11,
+      "title": "Prompt Architecture",
+      "idea": "",
+      "howToClaude": "",
+      "stepByStep": [],
+      "deploy": "",
+      "reflection": "",
+      "status": "pending",
+      "date": "2026-05-23"
+    },
+    {
+      "day": 12,
+      "title": "Multi-step Workflows",
+      "idea": "",
+      "howToClaude": "",
+      "stepByStep": [],
+      "deploy": "",
+      "reflection": "",
+      "status": "pending",
+      "date": "2026-05-24"
+    },
+    {
+      "day": 13,
+      "title": "Decision Support",
+      "idea": "",
+      "howToClaude": "",
+      "stepByStep": [],
+      "deploy": "",
+      "reflection": "",
+      "status": "pending",
+      "date": "2026-05-25"
+    },
+    {
+      "day": 14,
+      "title": "Week 2 Synthesis",
+      "idea": "",
+      "howToClaude": "",
+      "stepByStep": [],
+      "deploy": "",
+      "reflection": "",
+      "status": "pending",
+      "date": "2026-05-26"
+    },
+    {
+      "day": 15,
+      "title": "Sharing Your Work",
+      "idea": "",
+      "howToClaude": "",
+      "stepByStep": [],
+      "deploy": "",
+      "reflection": "",
+      "status": "pending",
+      "date": "2026-05-27"
+    },
+    {
+      "day": 16,
+      "title": "Teaching with AI",
+      "idea": "",
+      "howToClaude": "",
+      "stepByStep": [],
+      "deploy": "",
+      "reflection": "",
+      "status": "pending",
+      "date": "2026-05-28"
+    },
+    {
+      "day": 17,
+      "title": "Building for an Audience",
+      "idea": "",
+      "howToClaude": "",
+      "stepByStep": [],
+      "deploy": "",
+      "reflection": "",
+      "status": "pending",
+      "date": "2026-05-29"
+    },
+    {
+      "day": 18,
+      "title": "Scaling Your Practice",
+      "idea": "",
+      "howToClaude": "",
+      "stepByStep": [],
+      "deploy": "",
+      "reflection": "",
+      "status": "pending",
+      "date": "2026-05-30"
+    },
+    {
+      "day": 19,
+      "title": "AI in Daily Work",
+      "idea": "",
+      "howToClaude": "",
+      "stepByStep": [],
+      "deploy": "",
+      "reflection": "",
+      "status": "pending",
+      "date": "2026-05-31"
+    },
+    {
+      "day": 20,
+      "title": "Your AI Portfolio",
+      "idea": "",
+      "howToClaude": "",
+      "stepByStep": [],
+      "deploy": "",
+      "reflection": "",
+      "status": "pending",
+      "date": "2026-06-01"
+    },
+    {
+      "day": 21,
+      "title": "What's Next",
+      "idea": "",
+      "howToClaude": "",
+      "stepByStep": [],
+      "deploy": "",
+      "reflection": "",
+      "status": "pending",
+      "date": "2026-06-02"
+    }
+  ]
+}
