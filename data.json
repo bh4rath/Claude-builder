@@ -11,14 +11,14 @@
     {
       "day": 1,
       "title": "Problem Framing",
-      "idea": "Most people come to Claude with a fuzzy ask and blame the answer. The skill this week is problem framing.\n\nBefore you can solve anything, you need to understand what you are actually trying to solve. Most people skip this step. They jump straight to solutions, prompts, and outputs — and then wonder why the answers feel off.\n\nProblem framing is the act of getting clear before you get busy. It is the difference between spinning in circles and moving with purpose.",
-      "howToClaude": "I am going to describe a problem in plain language. Help me sharpen it into a clear, specific problem statement. Ask me clarifying questions if needed. Do not solve it yet — just help me see it more clearly.\n\nHere is my problem: [describe your problem or situation in your own words]",
+      "idea": "Most people come to Claude with a fuzzy ask and blame the answer. The skill this week is problem framing. Naming who has the problem, what it actually is, and what done looks like before you touch a tool.\n\nToday you do two things. You fill in the first two sections of the Build Brief in plain English. Then with that clarity in hand, you install Claude Desktop and Claude Code, and make one file appear on your screen using only conversation.\n\nSkill clarity. Tool clarity. Both today.",
+      "howToClaude": "I am going to describe a problem in plain language. Help me sharpen it. Who has it. What it actually is. No solution language. Then help me narrate the outcome in five to seven sentences as if it already exists. Walk through what the person does, what they see, what they get.",
       "stepByStep": [
-        "Open Claude.ai and start a new conversation",
-        "Describe your current situation or challenge in plain, unfiltered language — do not try to make it sound smart or polished",
-        "Paste the How to Claude prompt above and let Claude ask you questions",
-        "Answer Claude’s questions honestly — notice what gets sharper as you respond",
-        "Ask Claude to write your problem statement in exactly two crisp sentences. Save this."
+        "Open Claude.ai (claude.ai). Paste the prompt above.",
+        "Describe the problem you are circling. Let Claude push back until the statement is in plain human language.",
+        "Narrate the outcome in five to seven sentences. Save sections 1 and 2 of your Build Brief.",
+        "Install Claude Desktop from claude.ai/download.",
+        "Install Claude Code following the prompts. Open it. Type: \"Make a file called hello.html that says 'Hi, I am [your name] and I am building this week.' Open it in my browser when done.\""
       ],
       "deploy": "Two things in the cohort space: a screenshot of the hello-you file, and your problem statement in two lines.",
       "reflection": "What got clearer in your problem statement that you had been hiding from yourself?",
