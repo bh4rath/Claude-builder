@@ -44,12 +44,18 @@
     },
     {
       "day": 3,
-      "title": "Iterating on Output",
-      "idea": "",
-      "howToClaude": "",
-      "stepByStep": [],
-      "deploy": "",
-      "reflection": "",
+      "title": "The Quick Win",
+      "idea": "A quick win is not a full solution. It is the smallest piece that proves the shape works. The skill today is restraint, building exactly what is needed to test the shape and nothing more.\n\nThe tool is whichever Claude surface you chose yesterday. The iteration log is the small habit that turns building into a thinking practice.\n\nBy end of day you have a working artifact and the first row of your log.",
+      "howToClaude": "Here is my Build Brief so far. Here is my quick win: [one sentence]. Build only that. Single file. Plain. No extras. When done, suggest one small thing I could change tomorrow that would teach me something.",
+      "stepByStep": [
+        "Write section 6 of your Build Brief: one sentence describing the quick win, doable in two hours.",
+        "Open the surface you chose yesterday. Paste your brief plus the prompt above.",
+        "Let Claude build. Test the result. Use it once.",
+        "Open section 7 of your brief, the iteration log. Add row one with today's date, what you built, why, and \"yes, it works.\"",
+        "Save everything. Foundation is done."
+      ],
+      "deploy": "Post the quick win in the cohort. A screenshot, a URL, or a paragraph if your shape was information.",
+      "reflection": "What did you almost add that you held back on? The Brief works when you can say no to extras.",
       "status": "pending",
       "date": "2026-05-15"
     },
