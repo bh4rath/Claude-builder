@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Builder — 21 Days of AI Building</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=M+PLUS+1:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'M PLUS 1', sans-serif;
+}
+
+h1, h2, h3 { font-family: 'Carter One', cursive; }
+
+:root {
+  --sidebar-w: 230px;
+  --nav-h: 60px;
+  --green: #4CAF50;
+}
+
+:root[data-theme="dark"] {
+  --bg:         #111013;
+  --sidebar-bg: #1C1A1F;
+  --active-bg:  rgba(245,197,24,0.08);
+  --accent:     #F5C518;
+  --card-bg:    #1C1A1F;
+  --text:       #EDE8DA;
+  --muted:      rgba(237,232,218,0.70);
+  --border:     rgba(255,255,255,0.08);
+}
+
+:root[data-theme="light"] {
+  --bg:         #F5F0E8;
+  --sidebar-bg: #EDE8DA;
+  --active-bg:  rgba(201,162,39,0.12);
+  --accent:     #C9A227;
+  --card-bg:    #EDE8DA;
+  --text:       #3D3425;
+  --muted:      #6B5F4A;
+  --border:     rgba(0,0,0,0.08);
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font-family: 'M PLUS 1', sans-serif; }
+
+/* ─── SIDEBAR ─── */
+#sidebar {
+  position: fixed;
+  top: 0; left: 0;
+  width: var(--sidebar-w);
+  height: 100vh;
+  background: var(--sidebar-bg);
+  border-right: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  flex-direction: column;
+  z-index: 300;
+  transition: transform .24s ease;
+}
+
+.sb-top {
+  padding: 20px 16px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 14px;
+}
+.brand-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.brand-name {
+  font-family: 'Carter One', cursive;
+  font-size: 15px;
+  letter-spacing: .4px;
+  color: var(--accent);
+}
+
+.sb-title { font-weight: 700; font-size: 14px; color: var(--text); line-height: 1.25; }
+.sb-sub   { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+.sb-days {
+  flex: 1;
+  padding: 8px 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+.sb-days::-webkit-scrollbar { width: 3px; }
+.sb-days::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+.day-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--muted);
+  padding: 8px 14px;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  margin: 1px 6px;
+  border-radius: 6px;
+  transition: background .15s, color .15s;
+  user-select: none;
+}
+.day-item:hover { background: rgba(255,255,255,.04); color: var(--text); }
+[data-theme="light"] .day-item:hover { background: rgba(0,0,0,.04); }
+.day-item.active {
+  background: var(--active-bg);
+  color: var(--accent);
+  border-left-color: var(--accent);
+  font-weight: 600;
+}
+.day-item.done { color: var(--green); }
+.day-item.done.active { color: var(--accent); }
+
+.di-num {
+  font-family: 'Carter One', cursive;
+  font-size: 14px;
+  min-width: 22px;
+  line-height: 1;
+}
+.di-title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.di-check { font-size: 9px; color: var(--green); }
+
+.sb-bottom {
+  padding: 14px 16px;
+  border-top: 1px solid var(--border);
+}
+.prog-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+.prog-bar-bg {
+  background: rgba(255,255,255,0.07);
+  border-radius: 6px;
+  height: 6px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+[data-theme="light"] .prog-bar-bg { background: rgba(0,0,0,0.09); }
+.prog-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 6px;
+  transition: width .6s ease;
+}
+.prog-count { font-size: 11px; color: var(--muted); }
+
+/* ─── OVERLAY ─── */
+#overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.65);
+  z-index: 200;
+}
+#overlay.show { display: block; }
+
+/* ─── NAVBAR ─── */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-w);
+  right: 0;
+  height: var(--nav-h);
+  background: var(--sidebar-bg);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 26px;
+  z-index: 100;
+}
+
+.nb-left  { display: flex; align-items: center; gap: 10px; }
+.nb-right { display: flex; align-items: center; gap: 14px; }
+
+#hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 6px;
+  line-height: 1;
+}
+
+.nb-day-label {
+  font-family: 'Carter One', cursive;
+  font-size: 16px;
+  color: var(--accent);
+  letter-spacing: .05em;
+}
+
+.theme-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color .15s;
+}
+.theme-btn:hover { color: var(--accent); }
+
+.user-name { font-size: 13px; color: var(--muted); font-weight: 500; }
+.avatar {
+  width: 33px; height: 33px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #000;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ─── MAIN ─── */
+#main {
+  margin-left: var(--sidebar-w);
+  margin-top: var(--nav-h);
+  padding: 36px 44px 72px;
+  max-width: 860px;
+  min-height: calc(100vh - var(--nav-h));
+  background: var(--bg);
+}
+
+/* ─── DAY HEADER ─── */
+.day-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.day-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.day-main-title {
+  font-family: 'Carter One', cursive;
+  font-size: 38px;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 6px;
+}
+.day-date-text {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.day-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.day-status.pending {
+  background: rgba(255,255,255,0.05);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+.day-status.complete {
+  background: rgba(76,175,80,0.12);
+  color: var(--green);
+  border: 1px solid rgba(76,175,80,0.3);
+}
+.day-nav-btns {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding-top: 8px;
+}
+.nav-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 15px;
+  cursor: pointer;
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .15s;
+}
+.nav-btn:hover { background: rgba(255,255,255,.06); }
+.nav-btn:disabled { opacity: 0.3; cursor: default; }
+[data-theme="light"] .nav-btn:hover { background: rgba(0,0,0,.05); }
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 28px 0;
+}
+
+/* ─── SECTIONS ─── */
+.content-section {
+  margin-bottom: 36px;
+}
+
+.sec-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.sec-icon {
+  width: 30px; height: 30px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.sec-title {
+  font-family: 'Carter One', cursive;
+  font-size: 21px;
+  font-weight: 400;
+  letter-spacing: .04em;
+}
+
+/* Idea */
+.sec-idea .sec-icon { background: rgba(245,197,24,0.12); }
+.sec-idea .sec-title { color: var(--accent); }
+.idea-body {
+  font-size: 15.5px;
+  line-height: 1.85;
+  color: var(--text);
+}
+.idea-body p { margin-bottom: 13px; }
+.idea-body p:last-child { margin-bottom: 0; }
+
+/* How to Claude */
+.sec-htc .sec-icon { background: rgba(88,166,255,0.1); }
+.sec-htc .sec-title { color: #58a6ff; }
+[data-theme="light"] .sec-htc .sec-title { color: #0064c8; }
+.prompt-block {
+  position: relative;
+  background: rgba(88,166,255,0.05);
+  border: 1px solid rgba(88,166,255,0.18);
+  border-radius: 10px;
+  padding: 20px 56px 20px 20px;
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+[data-theme="light"] .prompt-block {
+  background: rgba(0,100,200,0.04);
+  border-color: rgba(0,100,200,0.18);
+}
+.copy-btn {
+  position: absolute;
+  top: 10px; right: 10px;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 11px;
+  padding: 4px 9px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all .15s;
+  line-height: 1.4;
+}
+.copy-btn:hover { color: var(--accent); border-color: var(--accent); }
+
+/* Step by Step */
+.sec-steps .sec-icon { background: rgba(76,175,80,0.1); }
+.sec-steps .sec-title { color: var(--green); }
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+}
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.step-num {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: rgba(76,175,80,0.12);
+  border: 1.5px solid rgba(76,175,80,0.32);
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.step-text {
+  font-size: 14.5px;
+  color: var(--text);
+  line-height: 1.72;
+}
+
+/* Deploy */
+.sec-deploy .sec-icon { background: rgba(245,197,24,0.12); }
+.sec-deploy .sec-title { color: var(--accent); }
+.deploy-card {
+  background: rgba(245,197,24,0.05);
+  border: 1px solid rgba(245,197,24,0.22);
+  border-radius: 10px;
+  padding: 20px 22px;
+}
+.deploy-card p {
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.deploy-card p:last-child { margin-bottom: 0; }
+
+/* Reflection */
+.sec-reflection .sec-icon { background: rgba(196,148,255,0.1); }
+.sec-reflection .sec-title { color: #c494ff; }
+[data-theme="light"] .sec-reflection .sec-title { color: #7850c8; }
+.reflection-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(196,148,255,0.18);
+  border-radius: 10px;
+  padding: 22px 24px;
+}
+[data-theme="light"] .reflection-card { border-color: rgba(120,80,200,0.18); }
+.ref-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: #c494ff;
+  margin-bottom: 10px;
+}
+[data-theme="light"] .ref-label { color: #7850c8; }
+.reflection-text {
+  font-size: 15.5px;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+/* Coming soon */
+.coming-soon {
+  text-align: center;
+  padding: 80px 20px;
+}
+.cs-day  { font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 14px; }
+.cs-text { font-size: 20px; color: var(--muted); font-weight: 600; }
+
+/* Footer */
+.footer {
+  margin-top: 56px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* Fade in */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeUp .22s ease; }
+
+/* ─── RESPONSIVE ─── */
+#bottomNav { display: none; }
+
+@media (max-width: 768px) {
+  #sidebar { transform: translateX(-100%); }
+  #sidebar.open { transform: translateX(0); }
+  #hamburger { display: flex; }
+  #navbar { left: 0; }
+  #main { margin-left: 0; padding: 24px 18px 90px; }
+  .day-main-title { font-size: 28px; }
+  #bottomNav { display: flex; }
+}
+
+@media (max-width: 480px) {
+  .user-name { display: none; }
+  #main { padding: 20px 14px 90px; }
+  .day-main-title { font-size: 24px; }
+}
+
+[data-theme="light"] #sidebar { border-right-color: rgba(0,0,0,0.08); }
+[data-theme="light"] #navbar  { border-bottom-color: rgba(0,0,0,0.08); }
+
+/* ─── BOTTOM NAV ─── */
+#bottomNav {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 64px;
+  background: var(--sidebar-bg);
+  border-top: 1px solid var(--border);
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.bn-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 10px;
+  border: none;
+  background: none;
+  font-size: 10px;
+  transition: color .15s;
+}
+.bn-item:hover { color: var(--text); }
+.bn-item:disabled { opacity: 0.3; }
+.bn-icon { font-size: 18px; line-height: 1; }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav id="sidebar" role="navigation" aria-label="Day navigation">
+
+  <div class="sb-top">
+    <div class="brand">
+      <div class="brand-dot"></div>
+      <span class="brand-name">Claude Builder</span>
+    </div>
+    <div class="sb-title" id="sbCohort">Cohort 1</div>
+    <div class="sb-sub"  id="sbUser">Bharath S</div>
+  </div>
+
+  <div class="sb-days" id="dayList"></div>
+
+  <div class="sb-bottom">
+    <div class="prog-label">Progress</div>
+    <div class="prog-bar-bg">
+      <div class="prog-bar-fill" id="progBar" style="width:0%"></div>
+    </div>
+    <div class="prog-count" id="progCount">0 / 21 days complete</div>
+  </div>
+
+</nav>
+
+<!-- OVERLAY -->
+<div id="overlay" onclick="closeSidebar()"></div>
+
+<!-- NAVBAR -->
+<header id="navbar">
+  <div class="nb-left">
+    <button id="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation">&#9776;</button>
+    <div class="brand" style="margin-bottom:0">
+      <div class="brand-dot"></div>
+      <span class="brand-name" style="font-size:14px">Claude Builder</span>
+    </div>
+    <span class="nb-day-label" id="navDayLabel"></span>
+  </div>
+  <div class="nb-right">
+    <button id="themeBtn" class="theme-btn" title="Toggle theme">&#9728;</button>
+    <span class="user-name" id="navUser">Bharath S</span>
+    <div class="avatar" id="navAvatar">BS</div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main id="main">
+  <div id="dayContent"></div>
+</main>
+
+<!-- BOTTOM NAV (mobile) -->
+<nav id="bottomNav" aria-label="Bottom navigation">
+  <button class="bn-item" id="btnPrev" onclick="shiftDay(-1)">
+    <span class="bn-icon">&#8592;</span>
+    <span>Prev</span>
+  </button>
+  <button class="bn-item" onclick="toggleSidebar()">
+    <span class="bn-icon">&#9776;</span>
+    <span>Days</span>
+  </button>
+  <button class="bn-item" onclick="toggleTheme()">
+    <span class="bn-icon" id="bnThemeIcon">&#9728;</span>
+    <span>Theme</span>
+  </button>
+  <button class="bn-item" id="btnNext" onclick="shiftDay(1)">
+    <span class="bn-icon">&#8594;</span>
+    <span>Next</span>
+  </button>
+</nav>
+
+<script>
+/* STATE */
+let DAYS = [], META = {}, TOTAL = 21, currentDay = 1;
+
+function dayData(n) { return DAYS.find(d => d.day === n) || null; }
+
+/* UTILS */
+function esc(s) {
+  return String(s || '')
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function paras(text) {
+  if (!text) return '';
+  return text.split(/\n\n+/).map(p =>
+    '<p>' + esc(p.trim()).replace(/\n/g, '<br>') + '</p>'
+  ).join('');
+}
+function initials(name) {
+  return (name || 'BS').split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase();
+}
+function fmtDate(s) {
+  if (!s) return '';
+  const d = new Date(s);
+  return isNaN(d) ? s : d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+}
+
+/* SIDEBAR */
+function renderSidebar() {
+  const list = document.getElementById('dayList');
+  list.innerHTML = DAYS.map(d => {
+    const active = d.day === currentDay ? 'active' : '';
+    const done   = d.status === 'complete' ? 'done' : '';
+    const check  = d.status === 'complete' ? '<span class="di-check">&#10003;</span>' : '';
+    const raw    = d.title || 'Coming Soon';
+    const title  = raw.length > 17 ? raw.slice(0, 17) + '…' : raw;
+    return `<div class="day-item ${active} ${done}" onclick="goDay(${d.day})">
+      <span class="di-num">${d.day}</span>
+      <span class="di-title">${esc(title)}</span>
+      ${check}
+    </div>`;
+  }).join('');
+
+  const done = DAYS.filter(d => d.status === 'complete').length;
+  const pct  = TOTAL ? Math.round((done / TOTAL) * 100) : 0;
+  document.getElementById('progBar').style.width    = pct + '%';
+  document.getElementById('progCount').textContent  = `${done} / ${TOTAL} days complete`;
+}
+
+/* DAY RENDER */
+function renderDay(n) {
+  const d  = dayData(n);
+  const el = document.getElementById('dayContent');
+
+  if (!d) {
+    el.innerHTML = `<div class="coming-soon fade-in">
+      <div class="cs-day">Day ${n}</div>
+      <div class="cs-text">Content not found</div>
+    </div>`;
+    document.getElementById('navDayLabel').textContent = `Day ${n}`;
+    return;
+  }
+
+  const done        = d.status === 'complete';
+  const statusBadge = done
+    ? '<span class="day-status complete">&#10003; Completed</span>'
+    : '<span class="day-status pending">&#9679; Pending</span>';
+
+  const ideaSec = d.idea ? `
+    <div class="content-section sec-idea">
+      <div class="sec-header">
+        <div class="sec-icon">&#128161;</div>
+        <span class="sec-title">The Idea</span>
+      </div>
+      <div class="idea-body">${paras(d.idea)}</div>
+    </div>` : '';
+
+  const htcSec = d.howToClaude ? `
+    <div class="content-section sec-htc">
+      <div class="sec-header">
+        <div class="sec-icon">&#129302;</div>
+        <span class="sec-title">How to Claude</span>
+      </div>
+      <div class="prompt-block" id="pb-${n}"><button class="copy-btn" onclick="copyPrompt(${n})">Copy</button>${esc(d.howToClaude)}</div>
+    </div>` : '';
+
+  const stepsSec = d.stepByStep && d.stepByStep.length ? `
+    <div class="content-section sec-steps">
+      <div class="sec-header">
+        <div class="sec-icon">&#128203;</div>
+        <span class="sec-title">Step by Step</span>
+      </div>
+      <ul class="steps-list">
+        ${d.stepByStep.map((s, i) => `<li class="step-item">
+          <span class="step-num">${i + 1}</span>
+          <span class="step-text">${esc(s)}</span>
+        </li>`).join('')}
+      </ul>
+    </div>` : '';
+
+  const deploySec = d.deploy ? `
+    <div class="content-section sec-deploy">
+      <div class="sec-header">
+        <div class="sec-icon">&#128640;</div>
+        <span class="sec-title">Deploy</span>
+      </div>
+      <div class="deploy-card">${paras(d.deploy)}</div>
+    </div>` : '';
+
+  const refSec = d.reflection ? `
+    <div class="content-section sec-reflection">
+      <div class="sec-header">
+        <div class="sec-icon">&#10024;</div>
+        <span class="sec-title">Reflection</span>
+      </div>
+      <div class="reflection-card">
+        <div class="ref-label">Today&rsquo;s prompt</div>
+        <div class="reflection-text">${esc(d.reflection)}</div>
+      </div>
+    </div>` : '';
+
+  const user   = META.user   || 'Bharath S';
+  const cohort = META.cohort || 'Cohort 1';
+
+  el.innerHTML = `<div class="fade-in">
+    <div class="day-header">
+      <div class="day-header-left">
+        <div class="day-tag">Day ${n} &mdash; ${TOTAL}-Day Journey</div>
+        <div class="day-main-title">${esc(d.title || 'Day ' + n)}</div>
+        ${d.date ? `<div class="day-date-text">${fmtDate(d.date)}</div>` : ''}
+        ${statusBadge}
+      </div>
+      <div class="day-nav-btns">
+        <button class="nav-btn" onclick="shiftDay(-1)" ${n <= 1 ? 'disabled' : ''} aria-label="Previous day">&#8592;</button>
+        <button class="nav-btn" onclick="shiftDay(1)"  ${n >= TOTAL ? 'disabled' : ''} aria-label="Next day">&#8594;</button>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    ${ideaSec}
+    ${htcSec}
+    ${stepsSec}
+    ${deploySec}
+    ${refSec}
+
+    <div class="footer">${esc(user)} &middot; ${esc(cohort)} &middot; Claude Builder 21-Day AI Building Journey</div>
+  </div>`;
+
+  document.getElementById('navDayLabel').textContent = `Day ${n}`;
+  const bp = document.getElementById('btnPrev');
+  const bn = document.getElementById('btnNext');
+  if (bp) bp.disabled = n <= 1;
+  if (bn) bn.disabled = n >= TOTAL;
+}
+
+/* NAVIGATION */
+function goDay(n) {
+  if (n < 1 || n > TOTAL) return;
+  currentDay = n;
+  renderDay(n);
+  renderSidebar();
+  window.scrollTo(0, 0);
+  closeSidebar();
+  try { localStorage.setItem('cb-day', n); } catch(e) {}
+}
+function shiftDay(delta) { goDay(currentDay + delta); }
+
+/* COPY PROMPT */
+function copyPrompt(n) {
+  const d = dayData(n);
+  if (!d || !d.howToClaude) return;
+  navigator.clipboard.writeText(d.howToClaude).then(() => {
+    const btn = document.querySelector(`#pb-${n} .copy-btn`);
+    if (btn) { btn.textContent = 'Copied!'; setTimeout(() => btn.textContent = 'Copy', 1600); }
+  }).catch(() => {});
+}
+
+/* SIDEBAR */
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('show');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('show');
+}
+
+/* THEME */
+function applyTheme(light) {
+  document.documentElement.setAttribute('data-theme', light ? 'light' : 'dark');
+  const tb = document.getElementById('themeBtn');
+  if (tb) tb.textContent = light ? '🌙' : '☀️';
+  const bi = document.getElementById('bnThemeIcon');
+  if (bi) bi.textContent = light ? '🌙' : '☀️';
+}
+function toggleTheme() {
+  const isLight = document.documentElement.getAttribute('data-theme') !== 'light';
+  applyTheme(isLight);
+  try { localStorage.setItem('cb-theme', isLight ? 'light' : 'dark'); } catch(e) {}
+}
+
+/* KEYBOARD */
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  if (e.key === 'ArrowLeft')  { e.preventDefault(); shiftDay(-1); }
+  if (e.key === 'ArrowRight') { e.preventDefault(); shiftDay(1); }
+});
+
+/* INIT */
+async function init() {
+  try {
+    const res = await fetch('data.json');
+    const data = await res.json();
+    META  = data.meta || {};
+    DAYS  = data.days || [];
+    TOTAL = META.totalDays || 21;
+  } catch(e) {
+    console.warn('Could not load data.json — serve over HTTP.');
+    DAYS  = Array.from({ length: 21 }, (_, i) => ({ day: i + 1, title: `Day ${i + 1}`, status: 'pending' }));
+    META  = { user: 'Bharath S', cohort: 'Cohort 1', totalDays: 21 };
+    TOTAL = 21;
+  }
+
+  const user = META.user || 'Bharath S';
+  document.getElementById('sbCohort').textContent  = META.cohort || 'Cohort 1';
+  document.getElementById('sbUser').textContent    = user;
+  document.getElementById('navUser').textContent   = user;
+  document.getElementById('navAvatar').textContent = initials(user);
+
+  try {
+    const saved = parseInt(localStorage.getItem('cb-day'));
+    if (saved && saved >= 1 && saved <= TOTAL) currentDay = saved;
+  } catch(e) {}
+
+  try {
+    const saved = localStorage.getItem('cb-theme');
+    if (saved) applyTheme(saved === 'light');
+  } catch(e) {}
+
+  document.getElementById('themeBtn').addEventListener('click', toggleTheme);
+
+  renderSidebar();
+  renderDay(currentDay);
+}
+
+init();
+</script>
+</body>
+</html>
