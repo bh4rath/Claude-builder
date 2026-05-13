@@ -61,12 +61,18 @@
     },
     {
       "day": 4,
-      "title": "Structuring Your Ask",
-      "idea": "",
-      "howToClaude": "",
-      "stepByStep": [],
-      "deploy": "",
-      "reflection": "",
+      "title": "Public Voice",
+      "idea": "Now you turn your project outward. The skill is clear public voice: saying what you do and who it is for in language a stranger can act on.\n\nMost landing pages fail because the writer is performing instead of communicating. The tool is Claude.ai, used as a draft partner that pushes you toward shorter, plainer, more honest sentences.\n\nToday is words. Tomorrow you build the page.",
+      "howToClaude": "Here is my Build Brief. I am writing the copy for a landing page. Draft a hero headline (one line), a subhead (one sentence), and one call to action. Make it sound like a real person, not a marketing site. Then ask me three questions that would make it sharper.",
+      "stepByStep": [
+        "Open Claude.ai (claude.ai). Paste your Build Brief plus the prompt above.",
+        "Read Claude's draft out loud. Does it sound like you, or like a template?",
+        "Answer the three questions. Let Claude rewrite.",
+        "Iterate two or three more rounds until the headline says exactly what you do.",
+        "Save the copy in a doc or in your project Notion."
+      ],
+      "deploy": "Paste your hero headline and CTA in the cohort. One line each.",
+      "reflection": "What word did Claude suggest that you kept? What word did you replace because it was not yours?",
       "status": "pending",
       "date": "2026-05-16"
     },
