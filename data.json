@@ -112,12 +112,18 @@
     },
     {
       "day": 7,
-      "title": "Week 1 Synthesis",
-      "idea": "",
-      "howToClaude": "",
-      "stepByStep": [],
-      "deploy": "",
-      "reflection": "",
+      "title": "Go Live",
+      "idea": "Today the page leaves your computer. The skill is shipping, plus the harder skill of receiving feedback as information instead of as a verdict on you.\n\nThe tool is Netlify, the simplest deploy on the internet. Drag your folder and you have a URL. End of week one. One artifact live. One function of value delivered: communicate.",
+      "howToClaude": "You will not need a prompt today. If something breaks, describe what is broken to Claude Code in one sentence and ask for a fix.",
+      "stepByStep": [
+        "Open netlify.com/drop. Drag your project folder.",
+        "Wait for the deploy. Copy the URL.",
+        "Open the URL on your phone. Confirm it looks right. Use the CTA.",
+        "Post the URL in the cohort with one sentence: what is this for, and what kind of feedback would help you most.",
+        "Read every reply. Write down the three pieces of feedback that landed, separate from the ones that stung."
+      ],
+      "deploy": "The URL in the cohort. Add the URL to your bio or signature today.",
+      "reflection": "What feedback surprised you? Surprise is the data.",
       "status": "pending",
       "date": "2026-05-19"
     },
