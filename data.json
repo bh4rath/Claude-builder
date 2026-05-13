@@ -129,12 +129,18 @@
     },
     {
       "day": 8,
-      "title": "Building a Simple Tool",
-      "idea": "",
-      "howToClaude": "",
-      "stepByStep": [],
-      "deploy": "",
-      "reflection": "",
+      "title": "The Candidate",
+      "idea": "Today the second function of value: creating value through thinking. The skill is recognizing a thinking task you do over and over and that produces real value when you do it well.\n\nMost people see this work as routine. It is actually a candidate for an instrument. Claude is the tool that turns that recurring thinking into a reusable shape.\n\nToday you name the candidate. The next three days you build the instrument.",
+      "howToClaude": "I want to find a recurring thinking task in my work that I could turn into a reusable Claude instrument. Interview me. Ask one question at a time. Look for: things I think about repeatedly, decisions I make often, structures I rebuild from scratch, briefs I write again and again. Stop when you have three candidates.",
+      "stepByStep": [
+        "Open Claude.ai (claude.ai). Paste the prompt above.",
+        "Answer Claude's questions. Pay attention to \"wait, I do that all the time\" moments.",
+        "Pick the candidate that, if done well every time, would change your week most.",
+        "Write one paragraph: the recurring problem, who needs it solved, what good looks like.",
+        "Save the paragraph. It is the brief for the rest of the week."
+      ],
+      "deploy": "Post the one-paragraph problem in the cohort.",
+      "reflection": "What did you almost dismiss as \"just part of the job\" that turned out to be a candidate?",
       "status": "pending",
       "date": "2026-05-20"
     },
