@@ -337,6 +337,36 @@ hr.divider {
   margin: 28px 0;
 }
 
+/* ─── DAY META ─── */
+.day-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.meta-item {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 11px;
+}
+.meta-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+.meta-value {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+}
+
 /* ─── SECTIONS ─── */
 .content-section {
   margin-bottom: 36px;
@@ -525,6 +555,7 @@ hr.divider {
   #main { margin-left: 0; padding: 24px 18px 90px; }
   .day-main-title { font-size: 28px; }
   #bottomNav { display: flex; }
+  .day-meta { gap: 6px; }
 }
 
 @media (max-width: 480px) {
@@ -662,6 +693,10 @@ function fmtDate(s) {
   const d = new Date(s);
   return isNaN(d) ? s : d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 }
+function metaChip(label, value) {
+  if (!value) return '';
+  return `<div class="meta-item"><span class="meta-label">${esc(label)}</span><span class="meta-value">${esc(value)}</span></div>`;
+}
 
 /* SIDEBAR */
 function renderSidebar() {
@@ -703,6 +738,16 @@ function renderDay(n) {
   const statusBadge = done
     ? '<span class="day-status complete">&#10003; Completed</span>'
     : '<span class="day-status pending">&#9679; Pending</span>';
+
+  const hasAnyConcept = d.concept || d.deliverable || d.phase || d.skill || d.type;
+  const metaSec = hasAnyConcept ? `
+    <div class="day-meta">
+      ${metaChip('Concept', d.concept)}
+      ${metaChip('Deliverable', d.deliverable)}
+      ${metaChip('Phase', d.phase)}
+      ${metaChip('Skill', d.skill)}
+      ${metaChip('Type', d.type)}
+    </div>` : '';
 
   const ideaSec = d.idea ? `
     <div class="content-section sec-idea">
@@ -776,6 +821,7 @@ function renderDay(n) {
 
     <hr class="divider">
 
+    ${metaSec}
     ${ideaSec}
     ${htcSec}
     ${stepsSec}

@@ -11,6 +11,11 @@
     {
       "day": 1,
       "title": "Problem Framing",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "Most people come to Claude with a fuzzy ask and blame the answer. The skill this week is problem framing. Naming who has the problem, what it actually is, and what done looks like before you touch a tool.\n\nToday you do two things. You fill in the first two sections of the Build Brief in plain English. Then with that clarity in hand, you install Claude Desktop and Claude Code, and make one file appear on your screen using only conversation.\n\nSkill clarity. Tool clarity. Both today.",
       "howToClaude": "I am going to describe a problem in plain language. Help me sharpen it. Who has it. What it actually is. No solution language. Then help me narrate the outcome in five to seven sentences as if it already exists. Walk through what the person does, what they see, what they get.",
       "stepByStep": [
@@ -28,6 +33,11 @@
     {
       "day": 2,
       "title": "Solution Shape",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "Every solution has a shape. Information, workflow, data persistence, or autonomous actions. The skill today is recognizing which shape your problem actually wants, not which one excites you.\n\nMost people pick the wrong shape because they pick the most interesting one. Claude is the tool that helps you stress-test the choice.\n\nBy end of day you will know what you are building, what form it takes, and which Claude surface you will use to build it.",
       "howToClaude": "Here is my problem and outcome from yesterday: [paste]. Walk me through the four shapes: information, workflow, data persistence, autonomous actions. For each, tell me the test from the Build Brief and ask me to answer honestly. At the end, recommend the shape and explain your reasoning.",
       "stepByStep": [
@@ -45,6 +55,11 @@
     {
       "day": 3,
       "title": "The Quick Win",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "A quick win is not a full solution. It is the smallest piece that proves the shape works. The skill today is restraint, building exactly what is needed to test the shape and nothing more.\n\nThe tool is whichever Claude surface you chose yesterday. The iteration log is the small habit that turns building into a thinking practice.\n\nBy end of day you have a working artifact and the first row of your log.",
       "howToClaude": "Here is my Build Brief so far. Here is my quick win: [one sentence]. Build only that. Single file. Plain. No extras. When done, suggest one small thing I could change tomorrow that would teach me something.",
       "stepByStep": [
@@ -62,6 +77,11 @@
     {
       "day": 4,
       "title": "Public Voice",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "Now you turn your project outward. The skill is clear public voice: saying what you do and who it is for in language a stranger can act on.\n\nMost landing pages fail because the writer is performing instead of communicating. The tool is Claude.ai, used as a draft partner that pushes you toward shorter, plainer, more honest sentences.\n\nToday is words. Tomorrow you build the page.",
       "howToClaude": "Here is my Build Brief. I am writing the copy for a landing page. Draft a hero headline (one line), a subhead (one sentence), and one call to action. Make it sound like a real person, not a marketing site. Then ask me three questions that would make it sharper.",
       "stepByStep": [
@@ -79,6 +99,11 @@
     {
       "day": 5,
       "title": "The Landing Page",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "Today the copy meets the page. The skill is translating words into a layout that respects them. The tool is Claude Code, where you describe the page in plain English and watch structure appear.\n\nThe trick is to lead with feeling, not with features. Tell Claude what the page should feel like before you tell it what should be on it.",
       "howToClaude": "Build me a single-page landing page. Here is the copy: [paste]. I want it to feel [warm, bold, quiet, playful, premium, friendly]. Single HTML file with inline CSS. Mobile first. Clean typography. One section per content block. Keep it simple.",
       "stepByStep": [
@@ -96,6 +121,11 @@
     {
       "day": 6,
       "title": "One Action",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "A page that does nothing is a poster. A page that does one thing is a tool. The skill today is restraint again: choosing the single action you want a visitor to take and refusing all the others.\n\nThe tool is Claude Code, wiring one call to action that actually works end to end. Email capture, calendar link, contact form, a button that does something real. One. Not three.",
       "howToClaude": "Add a [email capture form using Buttondown, calendar booking link, contact form] to my landing page. When someone uses it, they should [describe what happens]. Keep everything else the same.",
       "stepByStep": [
@@ -113,6 +143,11 @@
     {
       "day": 7,
       "title": "Go Live",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "Today the page leaves your computer. The skill is shipping, plus the harder skill of receiving feedback as information instead of as a verdict on you.\n\nThe tool is Netlify, the simplest deploy on the internet. Drag your folder and you have a URL. End of week one. One artifact live. One function of value delivered: communicate.",
       "howToClaude": "You will not need a prompt today. If something breaks, describe what is broken to Claude Code in one sentence and ask for a fix.",
       "stepByStep": [
@@ -130,6 +165,11 @@
     {
       "day": 8,
       "title": "The Candidate",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "Today the second function of value: creating value through thinking. The skill is recognizing a thinking task you do over and over and that produces real value when you do it well.\n\nMost people see this work as routine. It is actually a candidate for an instrument. Claude is the tool that turns that recurring thinking into a reusable shape.\n\nToday you name the candidate. The next three days you build the instrument.",
       "howToClaude": "I want to find a recurring thinking task in my work that I could turn into a reusable Claude instrument. Interview me. Ask one question at a time. Look for: things I think about repeatedly, decisions I make often, structures I rebuild from scratch, briefs I write again and again. Stop when you have three candidates.",
       "stepByStep": [
@@ -147,6 +187,11 @@
     {
       "day": 9,
       "title": "The Shape",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "A thinking instrument has a shape. What inputs go in, what questions get asked, what outputs come out. The skill today is designing that shape.\n\nThe tool is Claude.ai used not as a chatbot but as a partner sketching the architecture of repeatable thinking. By end of day you have a one-page design that another person could read and understand.",
       "howToClaude": "Here is the recurring thinking task: [paste yesterday's paragraph]. Help me design the shape. List the inputs that always go in. List the questions that always get asked. List the outputs that always come out. Then suggest the order of the questions. Push back if my list is too long or vague.",
       "stepByStep": [
@@ -164,6 +209,11 @@
     {
       "day": 10,
       "title": "The Project",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "Today the design becomes a Claude Project. The skill is turning a written design into a working instrument. The tool is the Claude.ai Project feature, with custom instructions that encode the shape and reference files that ground the thinking.\n\nOnce built, the Project does the same job the same way every time, available to you whenever you need it.",
       "howToClaude": "Write custom instructions for a Claude Project that does this: [paste your design]. The instructions should make any new chat in this Project follow the shape automatically. Use clear language. No marketing. Specify what Claude should ask, in what order, and what shape the output should take. Keep it under 300 words.",
       "stepByStep": [
@@ -181,6 +231,11 @@
     {
       "day": 11,
       "title": "Prompt Architecture",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "",
       "howToClaude": "",
       "stepByStep": [],
@@ -192,6 +247,11 @@
     {
       "day": 12,
       "title": "Multi-step Workflows",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "",
       "howToClaude": "",
       "stepByStep": [],
@@ -203,6 +263,11 @@
     {
       "day": 13,
       "title": "Decision Support",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "",
       "howToClaude": "",
       "stepByStep": [],
@@ -214,6 +279,11 @@
     {
       "day": 14,
       "title": "Week 2 Synthesis",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "",
       "howToClaude": "",
       "stepByStep": [],
@@ -225,6 +295,11 @@
     {
       "day": 15,
       "title": "Sharing Your Work",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "",
       "howToClaude": "",
       "stepByStep": [],
@@ -236,6 +311,11 @@
     {
       "day": 16,
       "title": "Teaching with AI",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "",
       "howToClaude": "",
       "stepByStep": [],
@@ -247,6 +327,11 @@
     {
       "day": 17,
       "title": "Building for an Audience",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "",
       "howToClaude": "",
       "stepByStep": [],
@@ -258,6 +343,11 @@
     {
       "day": 18,
       "title": "Scaling Your Practice",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "",
       "howToClaude": "",
       "stepByStep": [],
@@ -269,6 +359,11 @@
     {
       "day": 19,
       "title": "AI in Daily Work",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "",
       "howToClaude": "",
       "stepByStep": [],
@@ -280,6 +375,11 @@
     {
       "day": 20,
       "title": "Your AI Portfolio",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "",
       "howToClaude": "",
       "stepByStep": [],
@@ -291,6 +391,11 @@
     {
       "day": 21,
       "title": "What's Next",
+      "concept": "",
+      "deliverable": "",
+      "phase": "",
+      "skill": "",
+      "type": "",
       "idea": "",
       "howToClaude": "",
       "stepByStep": [],
